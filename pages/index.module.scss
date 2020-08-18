@@ -1,6 +1,4 @@
-
-$primaryColor: #F1EDEE;
-
+@import './styles/variables.scss';
 
 .fullwidth {
     margin-top: 15px;
@@ -13,10 +11,9 @@ $primaryColor: #F1EDEE;
 
 .mainContent {
     background-color: $primaryColor;
-    height: 100vh;
 }
 
 .sidebar {
-    background-color: #C6D5D8;
+    background-color: $sidebarColor;
     height: 100vh;
 }
