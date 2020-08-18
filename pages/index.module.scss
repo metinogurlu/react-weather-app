@@ -1,0 +1,19 @@
+@import './styles/variables.scss';
+
+.fullwidth {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    width: 99.225vw;
+    margin-left: -49.59vw;
+    left: 50%;
+  }
+
+.mainContent {
+    background-color: $primaryColor;
+}
+
+.sidebar {
+    background-color: $sidebarColor;
+    height: 100vh;
+}
