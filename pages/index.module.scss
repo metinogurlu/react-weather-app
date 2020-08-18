@@ -1,0 +1,22 @@
+
+$primaryColor: #F1EDEE;
+
+
+.fullwidth {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    width: 99.225vw;
+    margin-left: -49.59vw;
+    left: 50%;
+  }
+
+.mainContent {
+    background-color: $primaryColor;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #C6D5D8;
+    height: 100vh;
+}
