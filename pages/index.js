@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import styles from './index.module.scss'
-import Header from '../components/Header/header.js'
+import MainNavbar from '../components/MainNavbar/MainNavbar'
 
 const Home = () => (
     <main>
-      <div class={styles.mainContent}>
-        Main Content
+      <div className={styles.mainContent}>
+        <MainNavbar />
       </div>
-      <div class={styles.sidebar}>
+      <div className={styles.sidebar}>
         Sidebar
       </div>
     </main>

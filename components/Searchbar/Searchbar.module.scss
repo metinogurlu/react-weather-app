@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    border-radius: 10px;
+    padding: 18px 6px 18px 24px;;
+    background-color: $backgroundColor;
+    width: 340px;
+}
+
+.icon {
+    width: 24px;
+    height: auto;
+    margin-right: 1rem;
+    color: $placeholderColor;
+}
+
+input.search {
+    outline: none;
+    color: black;
+}
+
+input.search::placeholder {   
+    font-size: 1rem;
+    color: #9A9AA2;
+}
