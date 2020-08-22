@@ -1,0 +1,76 @@
+@import '../../styles/variables.scss';
+
+.dropdown {
+    position: relative;
+    &.open>.dropdownMenu {
+      display: block;
+    }
+    .dropdownToggle {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;    
+      cursor: pointer;    
+      background-color: transparent;
+      color: $textColor;
+      outline: none;
+
+      .icon {          
+        display: inline-block;
+        margin-left: 2px;
+        vertical-align: middle;
+      }
+    }
+  
+    .dropdownMenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 180px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        font-size: .75rem;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        border: 1px solid rgba(34, 36, 38, 0.15);
+        box-shadow: 0px 2px 3px rgba(34, 36, 38, 0.15);
+        border-radius: 3px;
+     
+      li {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        :hover {
+          background: #ddd;
+        }
+        & > a {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 5px;
+          clear: both;
+          font-weight: 400;
+          line-height: 1.42857143;
+          color: #333;
+          white-space: nowrap;
+          text-decoration: none;
+          
+          img {
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            margin: 0 5px;
+          }
+        }
+      } 
+    }  
+  }

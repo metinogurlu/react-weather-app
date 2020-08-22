@@ -1,49 +1,25 @@
 import React from 'react'
-class Dropdown extends React.Component {  
-    static PropTypes = {
-      list: React.PropTypes.array.isRequired
-    };
-    
-    static defaultProps = {
-      list: []
-    };
-    
+import ArrowDown from '../Icons/ArrowDown'
+import styles from './Dropdown.module.scss'
+export default class Dropdown extends React.Component {    
     constructor(props) {
       super(props);    
       this.state = {
         isOpen: false,
-        labelItem: null,
-        typeDropdown: null
+        labelItem: props.labelItem
       };
     }
-  
-    componentWillMount() {
-      const { label } = this.props.list[0];
-      let firstItem = null;    
-      if (typeof label != 'undefined') {
-        this.checkType(false);
-        firstItem = label;
-      } else {
-        this.checkType(true);
-        firstItem = this.props.list[0];
-      }        
-      this.setState({
-          labelItem: firstItem
-      });    
-    }
-    checkType = (value) => {
-      this.setState({
-          typeDropdown: value
-      });    
-    };
+    
     showDropdown = () => {
       this.setState({ isOpen: true });
       document.addEventListener("click", this.hideDropdown);
     };
+
     hideDropdown = () => {
       this.setState({ isOpen: false });
       document.removeEventListener("click", this.hideDropdown);
     };
+
     chooseItem = (value) => {    
       if (this.state.labelItem !== value) {
         this.setState({
@@ -53,26 +29,25 @@ class Dropdown extends React.Component {
     };
     
     renderDataDropDown = (item, index) => {    
-      const {value, label} = this.state.typeDropdown ? {value: index, label: item} : item;    
       return (
         <li
           key={index}
-          value={value}
-          onClick={() => this.chooseItem(label)}
+          value={item.value}
+          onClick={() => this.chooseItem(item.label)}
         >
-          <a>{label}</a>
+          <a><img src={item.imageUrl} alt={item.label}></img> {item.label}</a>
         </li> 
       )
     };
     render () {
-      const { list } = this.props;    
+      const list = this.props.list;    
       return (
-        <div className={`dropdown ${this.state.isOpen ? 'open' : ''}`}>
-          <button className="dropdown-toggle" type="button" onClick={this.showDropdown}>
+        <div className={`${styles.dropdown} ${this.state.isOpen ? styles.open : ''}`}>
+          <button className={styles.dropdownToggle} type="button" onClick={this.showDropdown}>
             {this.state.labelItem}
-            <span className="caret"></span>
+            <ArrowDown className={styles.icon} />
           </button>
-          <ul className="dropdown-menu">
+          <ul className={styles.dropdownMenu}>
             {list.map(this.renderDataDropDown)}
           </ul>
       </div>
