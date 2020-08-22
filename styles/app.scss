@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap';
+@import "~bootstrap/scss/bootstrap";
 @import 'variables.scss';
 
 * {
@@ -7,9 +8,17 @@
     border: 0;
     font: inherit;
   }
-  
+
   html {
     font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }  
+
+  strong {
+    font-weight: 600;
   }
   
   body {
