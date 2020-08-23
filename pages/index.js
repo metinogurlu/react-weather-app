@@ -17,6 +17,7 @@ const Home = () => (
           <CityCard name='Paris, France' imageUrl='/image/paris.png' />
         </div>        
         <div>
+        <i class="wi wi-day-thunderstorm"></i>
           <ForecastTable />
         </div>
       </div>
