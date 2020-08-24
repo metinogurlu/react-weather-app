@@ -16,9 +16,8 @@ const Home = () => (
           <CityCard name='New York, USA' imageUrl='/image/newyork.jpg' />
           <CityCard name='Paris, France' imageUrl='/image/paris.png' />
         </div>        
-        <div>
-        <i class="wi wi-day-thunderstorm"></i>
-          <ForecastTable />
+        <div>        
+          <ForecastTable cityName='Istanbul'/>
         </div>
       </div>
       <div className={styles.sidebar}>
