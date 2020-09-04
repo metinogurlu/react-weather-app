@@ -12,7 +12,7 @@ const cities = {
 function DailyForecast(date, id, hum, cMin, cMax) {
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     this.day= days[date.getDay()];
-    this.humidityPercent= hum;
+    this.humidityPercent = <i className={'wi wi-raindrop'}> {hum}%</i>;;
     this.status= <i className={`wi wi-owm-${id}`}></i>;
     this.calciusMin = cMin;
     this.calciusMax = cMax;
