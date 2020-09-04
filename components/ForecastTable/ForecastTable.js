@@ -12,7 +12,7 @@ const cities = {
 function DailyForecast(date, id, hum, cMin, cMax) {
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     this.day= days[date.getDay()];
-    this.humidityPercent= hum;
+    this.humidityPercent = <i className={'wi wi-raindrop'}> {hum}%</i>;;
     this.status= <i className={`wi wi-owm-${id}`}></i>;
     this.calciusMin = cMin;
     this.calciusMax = cMax;
@@ -30,7 +30,6 @@ function WeeklyForecast(cityName, dailyForecasts) {
 export default class ForecastTable extends React.Component {
     constructor(props) {
         super(props);
-        this.updateWeeklyForecast();
         this.state = {weeklyForecast: new WeeklyForecast(props.cityName, this.getDailyForecast().slice(1))}
     }
 

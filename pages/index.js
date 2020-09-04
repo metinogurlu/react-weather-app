@@ -4,6 +4,7 @@ import MainNavbar from '../components/MainNavbar/MainNavbar'
 import CityCard from '../components/CityCard/CityCard'
 import Table from 'react-bootstrap/Table'
 import ForecastTable from '../components/ForecastTable/ForecastTable'
+import DailyWeatherChart from '../components/DailyWeatherChart/DailyWeatherChart'
 
 const Home = () => (
     <main id={styles.app}>
@@ -16,7 +17,8 @@ const Home = () => (
           <CityCard name='New York, USA' imageUrl='/image/newyork.jpg' />
           <CityCard name='Paris, France' imageUrl='/image/paris.png' />
         </div>        
-        <div>        
+        <div>
+          {/* <DailyWeatherChart /> */}
           <ForecastTable cityName='Istanbul'/>
         </div>
       </div>
