@@ -30,7 +30,6 @@ function WeeklyForecast(cityName, dailyForecasts) {
 export default class ForecastTable extends React.Component {
     constructor(props) {
         super(props);
-        this.updateWeeklyForecast();
         this.state = {weeklyForecast: new WeeklyForecast(props.cityName, this.getDailyForecast().slice(1))}
     }
 
