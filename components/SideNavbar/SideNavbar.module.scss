@@ -1,6 +1,28 @@
+@import '../../styles/variables.scss';
 
 .navbar {
     display: flex;
     align-items: center;
-    align-content: flex-start;
+    justify-content: space-around;
+    font-weight: 600;
+
+    * {
+        color: #fff;
+    }
+
+    .linkButton {
+        background-color: transparent;
+        outline: none;
+    }
+
+    .indicator {
+        padding: 0.25rem 0.5rem;
+        background-color: $secondaryColor;
+        border-radius: 25%;
+        margin: 0px;
+    }
+
+    .profile {
+        border-radius: 13px;
+    }
 }

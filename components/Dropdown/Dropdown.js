@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import ArrowDown from '../Icons/ArrowDown';
 import styles from './Dropdown.module.scss';
