@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 import React from 'react';
+import PropTypes from 'prop-types';
 import ArrowDown from '../Icons/ArrowDown';
 import styles from './Dropdown.module.scss';
 
@@ -9,6 +11,10 @@ export default class Dropdown extends React.Component {
       isOpen: false,
       labelItem: props.labelItem,
     };
+    this.showDropdown = this.showDropdown.bind(this);
+    this.hideDropdown = this.hideDropdown.bind(this);
+    this.renderDataDropDown = this.renderDataDropDown.bind(this);
+    this.chooseItem = this.chooseItem.bind(this);
   }
 
   showDropdown() {
@@ -22,7 +28,8 @@ export default class Dropdown extends React.Component {
   }
 
   chooseItem(value) {
-    if (this.state.labelItem !== value) {
+    const { labelItem } = this.state;
+    if (labelItem !== value) {
       this.setState({
         labelItem: value,
       });
@@ -34,23 +41,30 @@ export default class Dropdown extends React.Component {
       <li
         key={index}
         value={item.value}
-        onClick={() => this.chooseItem(item.label)}
       >
-        <a>
+        <button
+          type="button"
+          value={item.label}
+          onClick={(e) => this.chooseItem(e.target.value)}
+        >
           <img src={item.imageUrl} alt={item.label} />
           {' '}
           {item.label}
-        </a>
+        </button>
       </li>
     );
   }
 
   render() {
     const { list } = this.props;
+    const {
+      isOpen,
+      labelItem,
+    } = this.state;
     return (
-      <div className={`${styles.dropdown} ${this.state.isOpen ? styles.open : ''}`}>
+      <div className={`${styles.dropdown} ${isOpen ? styles.open : ''}`}>
         <button className={styles.dropdownToggle} type="button" onClick={this.showDropdown}>
-          {this.state.labelItem}
+          {labelItem}
           <ArrowDown className={styles.icon} />
         </button>
         <ul className={styles.dropdownMenu}>
@@ -60,3 +74,14 @@ export default class Dropdown extends React.Component {
     );
   }
 }
+
+Dropdown.propTypes = {
+  labelItem: PropTypes.string.isRequired,
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      imageUrl: PropTypes.string,
+    }),
+  ).isRequired,
+};

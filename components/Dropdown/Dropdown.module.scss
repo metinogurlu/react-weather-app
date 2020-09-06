@@ -52,7 +52,9 @@
         :hover {
           background: #ddd;
         }
-        & > a {
+        & > button {
+          background-color: transparent;
+          outline: none;
           display: flex;
           align-items: center;
           width: 100%;
