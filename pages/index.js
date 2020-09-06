@@ -6,7 +6,6 @@ import MainNavbar from '../components/MainNavbar/MainNavbar';
 import SideNavbar from '../components/SideNavbar/SideNavbar';
 import CityCard from '../components/CityCard/CityCard';
 import ForecastTable from '../components/ForecastTable/ForecastTable';
-import DailyWeatherChart from '../components/DailyWeatherChart/DailyWeatherChart';
 
 const Home = () => (
   <main id={styles.app}>

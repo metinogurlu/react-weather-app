@@ -3,6 +3,14 @@ import styles from './MainNavbar.module.scss';
 import SearchBar from '../Searchbar/Searchbar';
 import Dropdown from '../Dropdown/Dropdown';
 
+const dropDownItems = [
+  { value: 1, label: 'January', imageUrl: './image/istanbul.jpg' },
+  { value: 2, label: 'February', imageUrl: './image/istanbul.jpg' },
+  { value: 3, label: 'March', imageUrl: './image/istanbul.jpg' },
+  { value: 4, label: 'April', imageUrl: './image/istanbul.jpg' },
+  { value: 5, label: 'May', imageUrl: './image/istanbul.jpg' },
+];
+
 export default function MainNavbar() {
   return (
     <div className={styles.navbar}>
@@ -11,10 +19,7 @@ export default function MainNavbar() {
       </section>
       <Dropdown
         labelItem="All places"
-        list={[{ value: 1, label: 'January', imageUrl: '/image/istanbul.jpg' }, { value: 2, label: 'February' }, { value: 3, label: 'March' },
-          { value: 4, label: 'April' }, { value: 5, label: 'May' }, { value: 6, label: 'June' }, { value: 7, label: 'July' },
-          { value: 8, label: 'August' }, { value: 9, label: 'September' }, { value: 10, label: 'October' },
-          { value: 11, label: 'November' }, { value: 12, label: 'December' }]}
+        list={dropDownItems}
       />
     </div>
   );
