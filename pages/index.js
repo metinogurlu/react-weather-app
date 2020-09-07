@@ -6,6 +6,7 @@ import MainNavbar from '../components/MainNavbar/MainNavbar';
 import SideNavbar from '../components/SideNavbar/SideNavbar';
 import CityCard from '../components/CityCard/CityCard';
 import ForecastTable from '../components/ForecastTable/ForecastTable';
+import Today from '../components/Today/Today';
 
 const Home = () => (
   <main id={styles.app}>
@@ -28,6 +29,10 @@ const Home = () => (
     </div>
     <div className={styles.sidebar}>
       <SideNavbar />
+      <section className={styles.today}>
+        <Today />
+      </section>
+      
     </div>
   </main>
 );

@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $backgroundColor;    
+
+    p {
+        font-size: .8rem;        
+        color: $sidebarSecondaryTextColor;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .today {
+        flex-direction: row;
+        
+        .icon {
+            font-size: 1.5rem;
+        }
+
+        .date {
+            margin-left: 10px;
+            line-height: 0.1;
+        }
+    }
+
+    .temperature {
+        margin: 0;
+        font-size: 6rem;
+        letter-spacing: -1px;
+
+        span {
+            display: inline-block;
+            vertical-align: text-top;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+    }
+}
